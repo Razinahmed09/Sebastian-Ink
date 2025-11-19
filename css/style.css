@@ -135,7 +135,7 @@ h1 {
 
 h2 {
   font-size: 55px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 65px;
 }
 @media (max-width: 767px) {
@@ -1858,7 +1858,7 @@ figure {
 }
 
 .star i {
-  color: var(--theme-color1);
+  color: #967316;
 }
 .star i.disable {
   color: var(--text-color);
@@ -2215,7 +2215,9 @@ figure {
   -webkit-animation: sway_Y 3s linear infinite alternate;
           animation: sway_Y 3s linear infinite alternate;
 }
-
+.about-section .sway_Y__animation {
+      filter: grayscale(1);
+}
 @-webkit-keyframes sway_YY {
   0% {
     -webkit-transform: translateY(0px);
@@ -4168,12 +4170,16 @@ textarea.form-control {
   color: var(--theme-color1);
 }
 .header-area {
-  top: 0px;
-  position: fixed;
-  width: 100%;
-  z-index: 99;
-  background: linear-gradient(to right, #90909014, #4d4227);
-  backdrop-filter: blur(10px);
+    top: 76px !important;
+    position: fixed;
+    width: 1400px;
+    /* margin: 0 auto; */
+    z-index: 99;
+    background: linear-gradient(to right, #90909014, #4d4227);
+    backdrop-filter: blur(10px);
+    transform: translate(-50%, -50%) !important;
+    left: 50%;
+    border-radius: 50px;
 }
 .header-area.header-blur::after {
   position: absolute;
@@ -5412,7 +5418,7 @@ textarea.form-control {
     margin-top: -55px;
 }
 .banner-five__content .title {
-  font-size: 96px;
+  font-size: 80px;
   line-height: 1.2;
   font-weight: 600;
   text-align: left;
@@ -5829,7 +5835,7 @@ textarea.form-control {
         filter: hue-rotate(45deg);
 }
 .about-section .inner-column h2{
-      font-weight: 600;
+      font-weight: 500;
 }
 
 .about-section .shape1 {
@@ -6380,6 +6386,46 @@ textarea.form-control {
   overflow: hidden;
   border-radius: 30px;
 }
+.centerContent {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f2ec;
+    border-radius: 30px;
+    padding: 70px 40px;
+}
+.centerContent .inner-box  {
+  max-width: 300px;
+  margin: 0 auto;
+  text-align: center;
+}
+.centerContent .inner-box h3 {
+  font-size: 30px;
+    margin-bottom: 20px;
+    color: #cd9f24;
+    background: linear-gradient(to right, #000000, #967d3b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 600;
+}
+.centerContent .svg_background {
+  background-color: #cd9f24;
+  padding: 20px;
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+   transition: 0.5s all ease-in-out;
+}
+.centerContent:hover .svg_background{
+  background-color: #000000;
+}
+.blog-section .animation__sunMove {
+  filter: hue-rotate(45deg);
+}
 .blog-block .inner-box .image-box .image {
   overflow: hidden;
 }
@@ -6402,7 +6448,7 @@ textarea.form-control {
   gap: 30px;
 }
 .blog-block .inner-box .content-box .info .dot {
-  color: var(--theme-color1);
+  color: #cd9f24;
   position: relative;
 }
 .blog-block .inner-box .content-box .info .dot::before {
@@ -6419,8 +6465,8 @@ textarea.form-control {
   margin: 20px 0;
 }
 .blog-block .inner-box .content-box .title a:hover {
-  color: var(--theme-color1);
-  text-decoration: underline;
+  color: #cd9f24;
+  /* text-decoration: underline; */
 }
 .blog-block .inner-box .content-box .readMore-btn {
   color: var(--headings-color);
@@ -6817,7 +6863,7 @@ textarea.form-control {
   border-top: 1px solid #dfdada;
 }
 .feature-block .inner-box .content-box a:hover {
-  color: var(--theme-color1);
+  color: #cd9f24;
 }
 @media (max-width: 1199px) {
   .feature-block .inner-box .content-box {
@@ -6871,7 +6917,7 @@ textarea.form-control {
   border-radius: 0;
 }
 .feature-arrys button:hover {
-  background-color: var(--theme-color1);
+  background-color: #cd9f24;
   color: var(--theme-color-white);
 }
 .feature-arrys .wrp {
@@ -7534,7 +7580,7 @@ textarea.form-control {
   height: 50px;
 }
 .marquee-five__item-wrp svg path {
-  fill: var(--theme-color1);
+  fill:#967316;
 }
 
 .newsletter-section {
@@ -8276,7 +8322,7 @@ textarea.form-control {
   transition: all 0.3s;
 }
 .product-slider-three .slider-arrys button:hover {
-  color: var(--theme-color1);
+  color: #cd9f24;
 }
 @media (max-width: 575px) {
   .product-slider-three .slider-arrys {
@@ -8348,7 +8394,7 @@ textarea.form-control {
   padding-top: 15px;
 }
 .product-block-three .inner-box .content .price {
-  color: var(--theme-color1);
+  color: #967316;
 }
 .product-block-three .inner-box .content .title {
   margin-top: 5px;
@@ -8723,7 +8769,7 @@ textarea.form-control {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 5px solid var(--theme-color-gray);
-  background-color: var(--theme-color1);
+  background-color: #cd9f24;
   position: absolute;
   top: 0;
   right: 0;
@@ -8734,16 +8780,19 @@ textarea.form-control {
   transition: 0.9s;
 }
 .service-block-three .inner-box .content {
-  max-width: 290px;
+  max-width: 320px;
   text-align: center;
   margin: 0 auto;
   margin-top: 30px;
+}
+.Eyebrow_heading {
+  font-size: 21px;
 }
 .service-block-three .inner-box .content .title {
   margin-bottom: 10px;
 }
 .service-block-three .inner-box .content .title a:hover {
-  color: var(--theme-color1);
+  color: #cd9f24;
 }
 .service-block-three .inner-box .inner-shape {
   position: absolute;
@@ -8768,8 +8817,9 @@ textarea.form-control {
   opacity: 0;
   visibility: hidden;
 }
+
 .service-block-three .inner-box .arry-icon:hover {
-  background-color: var(--theme-color1);
+  background-color: #cd9f24;
 }
 .service-block-three .inner-box:hover .icon {
   background-color: var(--theme-color2);
@@ -9340,7 +9390,7 @@ textarea.form-control {
 }
 .testimonial-section .slider-arrys button:hover {
   color: var(--theme-color-white);
-  background-color: var(--theme-color1);
+  background-color: #cd9f24;
 }
 
 .testimonial-block .inner-box {
@@ -13609,4 +13659,27 @@ Sidebar
 
 .map {
   height: 450px;
+}
+
+@media (max-width: 1399px) {
+  .centerContent {
+    padding: 38px 40px; 
+  }
+}
+@media (max-width: 1199px) {
+  .centerContent {
+        padding: 34px 30px;
+  }
+  .centerContent .inner-box h3 {
+        font-size: 22px;
+    margin-bottom: 10px;
+
+  }
+  .centerContent .inner-box p {
+    font-size: 15px;
+    line-height: 25px;
+  }
+  .blog-block .inner-box .content-box .info {
+    display: block;
+  }
 }

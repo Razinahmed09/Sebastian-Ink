@@ -17,6 +17,7 @@ var THEMEMASCOT = {};
 			dataType: "html",
 		});
 	}
+	
 	/* ---------------------------------------------------------------------- */
 	/* ----------------------------- En Demo Switcher  ---------------------- */
 	/* ---------------------------------------------------------------------- */
@@ -60,6 +61,7 @@ var THEMEMASCOT = {};
 
 	// Header area start here ***
 	// Mobile menu
+	
 	$(".header-area nav").meanmenu();
 
 	// Menu Fixed
@@ -897,3 +899,7 @@ var THEMEMASCOT = {};
 	}
 	// WOW Animatin area start here ***
 })(window.jQuery);
+
+
+
+
