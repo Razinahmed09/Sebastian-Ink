@@ -20,16 +20,7 @@
 </head>
 
 <body>
-
-    <div id="smooth-wrapper">
-    <div id="smooth-content">
-      <!-- HEADER -->
-      <!-- HERO SECTION -->
-      <!-- ABOUT SECTION -->
-      <!-- FOOTER -->
-  
-
-    <!-- Preloader area start -->
+     <!-- Preloader area start -->
     <div id="preloader">
         <div class="animation-preloader">
             <div class="spinner"></div>
@@ -145,8 +136,8 @@
                         </ul>
                     </nav>
                     <div class="menu-btns">
-                        <button class="search-trigger d-none d-lg-block"><i class="fa-light fa-magnifying-glass"></i></button>
-                        <a href="#" class="book-now d-none d-xl-inline-block">Book An Apoinment
+                        <!-- <button class="search-trigger d-none d-lg-block"><i class="fa-light fa-magnifying-glass"></i></button> -->
+                        <a href="#" class="book-now d-none">Book An Apoinment
                             <svg width="12" height="13" viewBox="0 0 12 13" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_1_441)">
@@ -161,6 +152,19 @@
                                 </defs>
                             </svg>
                         </a>
+                        <div class="parent_language">
+                        <div id="google_translate_element" style="display:none;"></div>
+                        <div class="custom-lang">
+                            <i class="fas fa-language"></i>
+                            <select id="langSelect">
+                                <option value="">Select Language</option>
+                                <option value="en">English</option>
+                                <option value="fr">French</option>
+                                <option value="de">German</option>
+                                <option value="es">Spanish</option>
+                            </select>
+                        </div>
+                    </div>
                         <button class="menubars d-block d-lg-none" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#menubar">
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none"
@@ -171,11 +175,21 @@
                             </svg>
                         </button>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </header>
     <!-- Header area end here -->
+    <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <!-- HEADER -->
+      <!-- HERO SECTION -->
+      <!-- ABOUT SECTION -->
+      <!-- FOOTER -->
+  
+
+   
 
     <!-- Sidebar area start here -->
     <div class="sidebar-area offcanvas offcanvas-end" id="menubar">
@@ -3754,41 +3768,29 @@
     <!-- Script Js -->
     <script src="js/script.js"></script>
     <script>
-        // register plugins
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-// create smoother
-const smoother = ScrollSmoother.create({
-  wrapper: "#smooth-wrapper",
-  content: "#smooth-content",
-  smooth: 1.5,
-  effects: true,
-});
 
-// ensure ScrollTrigger uses the smoother scroller and refresh
-ScrollTrigger.refresh();
+</script>
 
-// Mobile menu (init before/after as you already do)
-$(".header-area nav").meanmenu();
+  <meta name="google" content="notranslate">
+  <script type="text/javascript">
+   
 
-// CSS class target
-const $header = $(".header-area");
 
-// Option A: simple toggle using toggleClass (recommended)
-gsap.to($header.get(0), {
-  // dummy tween, we only use ScrollTrigger's toggleClass here
-  duration: 0.01,
-  scrollTrigger: {
-    scroller: "#smooth-content",                // IMPORTANT: use the smooth-content scroller
-    trigger: "#smooth-content",                 // trigger anchored to the content element
-    start: "top+=150 top",                      // when the virtual scroll has moved 150px
-    end: 99999,                                 // keep it simple, end far away
-    toggleClass: { targets: ".header-area", className: "menu-fixed animated fadeInDown" },
-    // markers: true, // enable while debugging
+    function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+
+document.getElementById("langSelect").addEventListener("change", function() {
+  var lang = this.value;
+  var frame = document.querySelector(".goog-te-combo");
+  if (frame) {
+    frame.value = lang;
+    frame.dispatchEvent(new Event('change'));
   }
 });
-
-    </script>
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 
 </html>

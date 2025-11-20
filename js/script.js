@@ -61,7 +61,43 @@ var THEMEMASCOT = {};
 
 	// Header area start here ***
 	// Mobile menu
-	
+	        // register plugins
+
+	// gsap smooth scroll
+	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+// create smoother
+const smoother = ScrollSmoother.create({
+  wrapper: "#smooth-wrapper",
+  content: "#smooth-content",
+  smooth: 1.5,
+  effects: true,
+});
+
+// ensure ScrollTrigger uses the smoother scroller and refresh
+ScrollTrigger.refresh();
+
+// Mobile menu (init before/after as you already do)
+$(".header-area nav").meanmenu();
+
+// CSS class target
+const $header = $(".header-area");
+
+// Option A: simple toggle using toggleClass (recommended)
+gsap.to($header.get(0), {
+  // dummy tween, we only use ScrollTrigger's toggleClass here
+  duration: 0.01,
+  scrollTrigger: {
+    scroller: "#smooth-content",                // IMPORTANT: use the smooth-content scroller
+    trigger: "#smooth-content",                 // trigger anchored to the content element
+    start: "top+=150 top",                      // when the virtual scroll has moved 150px
+    end: 99999,                                 // keep it simple, end far away
+    toggleClass: { targets: ".header-area", className: "menu-fixed animated fadeInDown" },
+    // markers: true, // enable while debugging
+  }
+});
+	// gsap smooth scroll
+
 	$(".header-area nav").meanmenu();
 
 	// Menu Fixed
