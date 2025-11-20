@@ -903,3 +903,135 @@ var THEMEMASCOT = {};
 
 
 
+// courseSec js 
+
+let currentIndex = 0;
+let itemsToShow = 3;
+const track = document.getElementById('carouselTrack');
+const cards = document.querySelectorAll('.course-card');
+const totalCards = cards.length;
+let maxIndex = 0;  // <-- FIXED (reset to 0)
+let autoPlayInterval;
+
+// Update items to show based on screen size
+function updateItemsToShow() {
+    const width = window.innerWidth;
+
+    if (width <= 768) {
+        itemsToShow = 1;
+    } else if (width <= 1400) {
+        itemsToShow = 2;
+    } else {
+        itemsToShow = 3;
+    }
+
+    maxIndex = Math.max(0, totalCards - itemsToShow);
+
+    if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+    }
+
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+    createPagination();
+    updateCarousel();
+}
+
+window.addEventListener("resize", updateItemsToShow);
+window.addEventListener("load", updateItemsToShow);
+
+
+        // Create pagination dots
+        function createPagination() {
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = ''; // Clear existing dots
+            for (let i = 0; i <= maxIndex; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'dot' + (i === currentIndex ? ' active' : '');
+                dot.onclick = () => goToSlide(i);
+                pagination.appendChild(dot);
+            }
+        }
+
+        // Update pagination dots
+        function updatePagination() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Go to specific slide
+        function goToSlide(index) {
+            currentIndex = Math.min(Math.max(0, index), maxIndex);
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        // Update carousel position
+        function updateCarousel() {
+            // Calculate the percentage based on card width + gap
+            const cardWidth = 100 / itemsToShow;
+            const gapPercentage = (24 / track.offsetWidth) * 100; // 24px gap
+            const movePercentage = currentIndex * (cardWidth + gapPercentage);
+            
+            track.style.transform = `translateX(-${movePercentage}%)`;
+            updatePagination();
+        }
+
+        // Next slide
+        function nextSlide() {
+            if (currentIndex >= maxIndex) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        // Previous slide
+        function prevSlide() {
+            if (currentIndex <= 0) {
+                currentIndex = maxIndex;
+            } else {
+                currentIndex--;
+            }
+            updateCarousel();
+            resetAutoPlay();
+        }
+
+        // Auto play
+        function startAutoPlay() {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(nextSlide, 5000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        // Initialize on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            updateItemsToShow();
+            startAutoPlay();
+            
+            // Pause on hover
+            const container = document.querySelector('.carousel-container');
+            if (container) {
+                container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                container.addEventListener('mouseleave', startAutoPlay);
+            }
+        });
+
+        // Update on window resize
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                updateItemsToShow();
+            }, 250);
+        });
+
+// courseSec js 
