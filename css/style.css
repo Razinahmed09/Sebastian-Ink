@@ -4095,6 +4095,9 @@ textarea.form-control {
 .logo img {
     width: 100%;
     height: 95px;
+    background: #212529;
+    border-radius: 50px;
+    padding: 0 22px;
 }
 
 .header-top-area {
@@ -4150,7 +4153,8 @@ textarea.form-control {
     width: 1380px;
     /* margin: 0 auto; */
     z-index: 99;
-    background: linear-gradient(to right, #52525214, beige); 
+    /* background: linear-gradient(to right, #52525214, beige);  */
+    background: linear-gradient(to right, #e5e5ca, beige);
     /* background: beige; */
     backdrop-filter: blur(10px);
     transform: translate(-50%, -50%) !important;
@@ -4176,7 +4180,8 @@ textarea.form-control {
 }
 .header-area.menu-fixed {
   top: 0;
-  background: #000000ba;
+  /* background: #000000ba; */
+      background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
   backdrop-filter: blur(10px);
   -webkit-box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.0509803922);
           box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.0509803922);
@@ -4249,7 +4254,7 @@ textarea.form-control {
   padding: 40px 0;
   font-size: 15px;
   line-height: 26px;
-  color: white;
+  color: #212529;
   text-transform: uppercase;
   font-family: var(--text-font)
 }
@@ -5307,7 +5312,13 @@ textarea.form-control {
 .banner-four__pagination .swiper-pagination-bullet-active {
   background-color: var(--theme-color1);
 }
-
+.hero-video__wrp {
+    height: 98vh;
+    overflow: hidden;
+}
+.hero-video__wrp video{
+  width: 100%;
+}
 .banner-five-area {
   overflow: hidden;
   position: relative;
@@ -5316,6 +5327,15 @@ textarea.form-control {
   padding-bottom: 150px;
   /* background: linear-gradient(256deg, rgba(245, 242, 236, 0.5) 0.9%, #f5f2ec 99.99%); */
   background: linear-gradient(256deg, rgb(0 0 0) 0.9%, #333333 99.99%);
+}
+.banner-five-area {
+      position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    z-index: 2222222;
+    top: 370px;
+        width: 100%;
+    background: #00000085;
 }
 .banner-five__shape-one {
   position: absolute;
@@ -5400,7 +5420,7 @@ textarea.form-control {
     margin-top: -55px;
 }
 .banner-five__content .title {
-  font-size: 80px;
+  font-size: 70px;
   line-height: 1.2;
   font-weight: 600;
   text-align: left;
@@ -14310,7 +14330,7 @@ body {
     cursor: pointer;
 }
 .menu-fixed .custom-lang {
-      background-color: #fbfbfb00;
+    background-color: #212529;
     border: 2px solid #f5f5dc;
 }
 .custom-lang i {
