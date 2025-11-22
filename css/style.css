@@ -1933,7 +1933,7 @@ figure {
   line-height: 30px;
   border-radius: 0px;
   color: var(--headings-color);
-  background-color: var(--theme-color-gray);
+  background-color: #ffffff;
   text-align: center;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
@@ -1941,6 +1941,7 @@ figure {
 .accordion .accordion-button.collapsed {
   background-color: transparent;
   color: var(--headings-color);
+  font-size: 18px;
 }
 .accordion .accordion-button.collapsed::before {
   content: "+";
@@ -4090,7 +4091,7 @@ textarea.form-control {
     /* width: 16%; */
     /* background: #504d4d; */
     border-radius: 50px;
-    padding: 0px 30px;
+    /* padding: 0px 30px; */
 }
 .logo img {
     width: 100%;
@@ -4152,7 +4153,7 @@ textarea.form-control {
     position: fixed;
     width: 1380px;
     /* margin: 0 auto; */
-    z-index: 99;
+    z-index: 9999999;
     /* background: linear-gradient(to right, #52525214, beige);  */
     background: linear-gradient(to right, #e5e5ca, beige);
     /* background: beige; */
@@ -4231,6 +4232,7 @@ textarea.form-control {
       -ms-flex-align: center;
           align-items: center;
   gap: 60px;
+  padding-right: 28px;
 }
 .header__main .main-menu ul {
   display: -webkit-box;
@@ -4542,7 +4544,7 @@ textarea.form-control {
   background-color: var(--theme-color-white);
 }
 .header-one__wrp {
-  margin: 0 30px;
+  margin: 0 7px;
 }
 @media (max-width: 1399.98px) {
   .header-one__wrp {
@@ -4635,6 +4637,7 @@ textarea.form-control {
 .offcanvas-backdrop {
   background-color: rgba(0, 0, 0, 0.8);
   cursor: url(../images/icon/x.png) 16 16, auto;
+  z-index: 22222222;
 }
 .offcanvas-backdrop.show {
   opacity: 1;
@@ -4660,7 +4663,7 @@ textarea.form-control {
 }
 
 .sidebar-area {
-  z-index: 99999;
+  z-index: 99999999;
   background-color: var(--headings-color);
 }
 .sidebar__socials ul {
@@ -5313,12 +5316,22 @@ textarea.form-control {
   background-color: var(--theme-color1);
 }
 .hero-video__wrp {
-    height: 98vh;
+    height: 677px;
     overflow: hidden;
 }
 .hero-video__wrp video{
   width: 100%;
 }
+.banner-five__content .btn-one {
+    background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
+    border: 1px solid #967316;
+    color: #967316;
+}
+.banner-five__content .btn-one:hover {
+    background: linear-gradient(45deg, #212529, #000000);
+    border: 1px solid #F5F5DC;
+    color: #fff;
+} 
 .banner-five-area {
   overflow: hidden;
   position: relative;
@@ -5329,12 +5342,12 @@ textarea.form-control {
   background: linear-gradient(256deg, rgb(0 0 0) 0.9%, #333333 99.99%);
 }
 .banner-five-area {
-      position: absolute;
+    position: absolute;
     transform: translate(-50%, -50%);
     left: 50%;
     z-index: 2222222;
-    top: 370px;
-        width: 100%;
+    top: 345px;
+    width: 100%;
     background: #00000085;
 }
 .banner-five__shape-one {
@@ -5365,7 +5378,7 @@ textarea.form-control {
   max-width: 1360px;
   margin: 0 auto;
   padding-top: 50px;
-  padding-bottom: 150px;
+  /* padding-bottom: 150px; */
 }
 @media (max-width: 991px) {
   .banner-five__wrp {
@@ -5418,12 +5431,28 @@ textarea.form-control {
 .banner-five__content {
       /* margin: 0 auto; */
     margin-top: -55px;
+    text-align: center;
+    background: #e9e9ce59;
+    backdrop-filter: blur(4px);
+    max-width: 1000px;
+    padding: 20px;
+    margin: 0 auto;
+    border-radius: 25px;
+    border: 2px solid #f3f3da3d;
+    box-shadow: rgb(255 255 255 / 18%) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.banner-five__content p {
+  color: white;
+  max-width: 700px;
+  font-size: 16px;
+  margin-top: 1rem;
+  margin: 1rem auto 0;
 }
 .banner-five__content .title {
   font-size: 70px;
   line-height: 1.2;
   font-weight: 600;
-  text-align: left;
+  text-align: center;
   color: white;
 }
 .banner-five__content .title span {
@@ -5431,6 +5460,7 @@ textarea.form-control {
   color: var(--theme-color1);
    /* 1. Apply a background gradient */
   background: linear-gradient(to right, #ffffff, #967d3b);
+      background: linear-gradient(45deg, #ffffff, #e5ce75);
   
   /* 2. Clip the background to the text shape */
   -webkit-background-clip: text; /* For WebKit browsers (Chrome, Safari) */
@@ -5445,7 +5475,7 @@ textarea.form-control {
   /* Optional: Other text styling */
   /* font-size: 48px; */
   font-weight: bold;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 1199px) {
   .banner-five__content .title {
@@ -6393,6 +6423,7 @@ textarea.form-control {
     justify-content: center;
     align-items: center;
     background: beige;
+    background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
     border-radius: 30px;
     padding: 70px 40px;
 }
@@ -6438,6 +6469,7 @@ textarea.form-control {
 .blog-block .inner-box .content-box {
   padding: 40px;
   background-color: beige;
+  background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
 }
 .blog-block .inner-box .content-box .info {
   font-weight: 400;
@@ -6589,7 +6621,7 @@ textarea.form-control {
      object-fit: cover;
 }
 .contact-section .form-column .inner-column {
-  background-color: #f5f5dc;
+  background-color: #eaead7;
   padding: 80px;
   position: relative;
   z-index: 1;
@@ -6654,7 +6686,7 @@ textarea.form-control {
 .contact-section .form-column .inner-column .nice-select {
   padding: 0;
   border-radius: 0;
-  background-color:#f5f5dc;
+  background-color:#eaead7;
   border: none;
   border-bottom: 1px solid var(--theme-color-white);
   color: #0c0e0f;
@@ -6790,9 +6822,14 @@ textarea.form-control {
     bottom: 20px;
   }
 }
+.faq-section h2 {
+      font-size: 48px;
+      line-height: 1.2;
+}
 .faq-section .content-column .inner-column {
-  padding: 90px;
-  background-color: var(--theme-color-gray);
+  padding: 60px;
+  background-color: beige;
+  background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
   border-radius: 30px;
   height: 100%;
   position: relative;
@@ -6829,6 +6866,7 @@ textarea.form-control {
 .feature-block .inner-box {
   padding: 20px;
   background-color: beige;
+  background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
   border-radius: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7558,7 +7596,7 @@ textarea.form-control {
 
 .marquee-five-area {
   overflow: hidden;
-  background-color: beige;
+  background-color:#eaead7;
   padding: 25px 0px;
 }
 @media (max-width: 767px) {
@@ -8356,6 +8394,7 @@ textarea.form-control {
 .product-block-three .inner-box .image {
   padding: 40px;
   background-color: beige;
+  background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
   position: relative;
   z-index: 1;
 }
@@ -8754,7 +8793,8 @@ textarea.form-control {
 .service-block-three .inner-box {
   padding: 30px;
   padding-bottom: 40px;
-  background-color: beige;
+  /* background-color: beige; */
+  background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
   border-radius: 30px;
   position: relative;
   z-index: 1;
@@ -8784,7 +8824,7 @@ textarea.form-control {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
   border: 5px solid var(--theme-color-gray);
-  background-color: #cd9f24;
+  background-color: #967316;
   position: absolute;
   top: 0;
   right: 0;
@@ -9432,6 +9472,7 @@ textarea.form-control {
 .testimonial-block .inner-box .content-box {
   padding: 30px;
   background-color: beige;
+  background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
   -webkit-mask-image: url(../images/shape/testimonial-item-mask.png);
           mask-image: url(../images/shape/testimonial-item-mask.png);
   -webkit-mask-repeat: no-repeat;
@@ -9678,6 +9719,7 @@ textarea.form-control {
   position: relative;
   z-index: 1;
   background-color: #f5f5dc;
+  background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
   padding: 60px 0;
 }
 .footer__shape {
@@ -13765,6 +13807,7 @@ Sidebar
 .courseSec .course-card {
     flex: 0 0 calc(33.333% - 16px);
     background: beige;
+    background: linear-gradient(45deg, #F5F5DC, #D3D3D3);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     overflow: hidden;
@@ -14077,6 +14120,21 @@ Sidebar
 
 /* courseSec */
 
+@media (max-width: 1900px) { 
+    .hero-video__wrp {
+        height: 677px;
+    }
+    .banner-five-area {
+          padding-top: 195px;
+          padding-bottom: 97px;
+    }
+    .banner-five-area {
+          top: 305px;
+    }
+    .hero-video__wrp {
+      height: 665px;
+    }
+}
 
 @media (max-width: 1399px) {
   .centerContent {
@@ -14088,9 +14146,9 @@ Sidebar
   .header__main .main-menu ul {
     gap: 22px;
   }
-  .header__main {
+  /* .header__main {
     justify-content: center;
-  }
+  } */
   .header__main .main-menu ul li a {
         font-size: 13px;
   }
@@ -14112,6 +14170,18 @@ Sidebar
 @media (max-width: 1199px) {
   .centerContent {
         padding: 34px 30px;
+  }
+  .header__main .main-menu {
+        padding-right: 15px;
+  }
+      .hero-video__wrp {
+        height: 612px;
+    }
+  .header__main .main-menu ul {
+      gap: 15px;
+  }
+  .banner-five-area {
+    top: 270px;
   }
       .header-area {
         max-width: 992px;
@@ -14141,13 +14211,38 @@ Sidebar
         justify-content: space-between;
     }
     .banner-five__content .title {
-          font-size: 60px;
+          font-size: 45px;
+    }
+    .header-area {
+        z-index: 9999999;
+    }
+    .hero-video__wrp video {
+        height: 65vh;
+        transform: scale(1.3);
+    }
+    .testimonial-block .inner-box .image-box {
+          top: 0px;
+          left: -8px;
+    }
+    .hero-video__wrp {
+      top:260px;
+    }
+    /* .banner-five__wrp {
+      padding-top: 0;
+    } */
+    .banner-five__content .info {
+      margin-top: 0;
+    }
+    
+    .banner-five-area {
+      padding-bottom: 72px;
+      top: 238px;
     }
     .courseSec .shape {
       display: none;
     }
     .banner-five__wrp {
-        padding-top: 45px;
+        padding-top: 0px;
     }
     .courseSec .card-title {
         font-size: 18px;
@@ -14156,10 +14251,45 @@ Sidebar
       flex-wrap: wrap;
     }
 }
+@media (max-width: 767px) { 
+  .banner-five__content p {
+    line-height:1.2;
+  }
+  .banner-five__content .title {
+    font-size:28px;
+  }
+  .hero-video__wrp {
+    transform:scale(1);
+    /* height: 80vh; */
+    height: 455px;
+  }
+  .hero-video__wrp video {
+    transform: scale(1.8);
+  }
+  .banner-five-area {
+        padding-bottom: 65px;
+        top: 200px;
+  }
+  .banner-five-area .container {
+        max-width: 85%;
+  }
+}
 @media (max-width: 600px) { 
   .banner-five__content .title {
-            font-size: 50px;
+            font-size: 28px;
         text-align: center;
+  }
+  .banner-five__content p {
+    line-height:1.2;
+  }
+  .testimonial-block .inner-box .image-box {
+            top: 18px;
+        left: 8px;
+  }
+  .banner-five__content .btn-one {
+    margin-top: 5px !important;
+    font-size: 14px;
+    padding: 10px 20px;
   }
   .banner-five__content .title span {
         text-align: center;
@@ -14170,8 +14300,24 @@ Sidebar
   .custom-lang select {
     font-size: 10px !important; 
   }
+  .banner-five__content {
+    padding: 10px;
+  }
+  .banner-five-area {
+    padding-bottom:96px;
+    top:211px;
+  }
+  .header__main .main-menu {
+      gap: 10px;
+  }
 }
 @media (max-width: 476px) { 
+  .hero-video__wrp video {
+    height: auto;
+  }
+  .header-area {
+    top:40px !important;
+  }
   #preloader {
     display: none;
   }
@@ -14179,13 +14325,37 @@ Sidebar
     padding: 0px 10px;
     width: 45%;
   }
+  .banner-five__content p {
+    line-height:1.2;
+    font-size: 13px;
+    /* 1. Set the desired number of lines */
+  -webkit-line-clamp: 2; 
+  /* 2. Enable WebKit's flexible box model for clamping */
+  display: -webkit-box;
+  /* 3. Define the box orientation for vertical clamping */
+  -webkit-box-orient: vertical;
+  /* 4. Hide the excess content */
+  overflow: hidden;
+  /* 5. (Optional but recommended) Include the standard property */
+  line-clamp: 3;
+  }
   .custom-lang {
     padding: 6px 8px !important; 
   }
+  .banner-five__content .title {
+    font-size: 22px;
+  }
+  .banner-five-area {
+    top: 116px;
+    padding-bottom:60px;
+  }
+  .header-area {
+    max-width: 96% !important;
+  }
   .custom-lang {
     position: absolute;
-    top: 29px;
-    right: 55px;
+    top: 15px;
+    right: 68px;
   }
   .logo img {
       width: 100px;
@@ -14223,16 +14393,39 @@ Sidebar
   .feature-block .inner-box {
       flex-direction: column;
   }
+  .hero-video__wrp {
+    height:325px;
+  }
 }
 @media (max-width: 410px) { 
-  .banner-five__content .title{
+  /* .banner-five__content .title{
             font-size: 40px;
-  }
+  } */
   .header-area {
-      max-width: 95% !important;
+      max-width: 98% !important;
+  }
+  .banner-five__content .title {
+    font-size:20px;
+  }
+  .banner-five-area .container {
+    max-width:95%;
+  }
+  .banner-five__content {
+    padding: 10px;
+  }
+  .banner-five-area {
+    top:117px;
+  }
+  .hero-video__wrp video {
+    transform: scale(1.9);
   }
 }
 
+@media (max-width: 370px) { 
+  .banner-five-area {
+    top:112px;
+  }
+}
 
 /* language converter css */
 
